@@ -1,7 +1,7 @@
-#DataWare, entreprise innovante souhaitant révolutionner sa gestion du personnel en utilisant PHP et SQL. Le site devra comporter quatre pages principales : la page d'accueil, la page des programmes, la page Plans avec un formulaire et la page de gallery. 
+# DataWare, entreprise innovante souhaitant révolutionner sa gestion du personnel en utilisant PHP et SQL. Le site devra comporter quatre pages principales : la page d'accueil, la page des programmes, la page Plans avec un formulaire et la page de gallery. 
 
 
-#Structure des Fichiers: 
+# Structure des Fichiers: 
 index.php : La page de login, contenant un formulaire;
 
 PHP/:
