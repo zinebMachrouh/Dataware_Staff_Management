@@ -20,23 +20,23 @@ UML/: Contient un fichier format pdf contenant 3 diagrammes :
 
 SQL/: Contient un fichier format sql contenant toutes les requetes utilisées: 
 
-# CREATE database dataware;
-# USE dataware;
+#CREATE database dataware;
+#USE dataware;
 
-# CREATE TABLE users (`id` INT NOT NULL AUTO_INCREMENT , `matricule` VARCHAR(25) NOT NULL , `nom` VARCHAR(25) NOT NULL , `prenom` VARCHAR(25) NOT NULL , `date_naissance` DATE NOT NULL , `service` VARCHAR(50) NOT NULL , `adresse` VARCHAR(150) NOT NULL , `tel` INT(10) NOT NULL , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(25) NOT NULL , `role` INT(1) NOT NULL DEFAULT '0' , `deleted` INT(1) NOT NULL DEFAULT '0' , PRIMARY KEY (`id`));
-# CREATE TABLE team (`idEquipe` INT NOT NULL AUTO_INCREMENT , `nomEquipe` VARCHAR(25) NOT NULL , `date_creation` DATE NOT NULL , `projet` VARCHAR(50) NOT NULL , `description` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`));
+#CREATE TABLE users (`id` INT NOT NULL AUTO_INCREMENT , `matricule` VARCHAR(25) NOT NULL , `nom` VARCHAR(25) NOT NULL , `prenom` VARCHAR(25) NOT NULL , `date_naissance` DATE NOT NULL , `service` VARCHAR(50) NOT NULL , `adresse` VARCHAR(150) NOT NULL , `tel` INT(10) NOT NULL , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(25) NOT NULL , `role` INT(1) NOT NULL DEFAULT '0' , `deleted` INT(1) NOT NULL DEFAULT '0' , PRIMARY KEY (`id`));
+#CREATE TABLE team (`idEquipe` INT NOT NULL AUTO_INCREMENT , `nomEquipe` VARCHAR(25) NOT NULL , `date_creation` DATE NOT NULL , `projet` VARCHAR(50) NOT NULL , `description` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`));
 
-# ALTER TABLE users ADD id_equipe INTEGER, ADD CONSTRAINT FOREIGN KEY(id_equipe) REFERENCES team(id);
-# ALTER TABLE users ADD status varchar(25);
+#ALTER TABLE users ADD id_equipe INTEGER, ADD CONSTRAINT FOREIGN KEY(id_equipe) REFERENCES team(id);
+#ALTER TABLE users ADD status varchar(25);
 
-# INSERT INTO team 
+#INSERT INTO team 
 VALUES 
     ('WebWizards', '2023-06-04', 'QuantumSphere', 'Transforming concepts into magical digital realities; designers, PM, front-end, back-end, full-stack devs ensure harmony.'), 
     ('TechTitans', '2023-08-02', 'CyberNexa', 'Frontiers of technological innovation; designers, PM, front-end, back-end, full-stack devs ensure technological prowess.'), 
     ('ByteBridges', '2023-08-24', 'DataForge', 'Building robust digital bridges; designers, PM, front-end, back-end, full-stack devs construct a reliable ecosystem.'), 
     ('PixelPioneers', '2023-04-10', 'EchoSync', 'Pushing design and tech boundaries; designers, PM, front-end, back-end, full-stack devs redefine user experiences.'), (NULL, 'CodeCrafters', '2023-07-22', 'CodeHarbor', 'Crafting seamless digital experiences; designers, PM, front-end, back-end, full-stack devs ensure holistic project success.');
 
-# INSERT INTO users (`matricule`, `nom`, `prenom`, `date_naissance`, `service`, `adresse`, `tel`, `email`, `password`, `role`, `deleted`, `id_equipe`, `status`)
+#INSERT INTO users (`matricule`, `nom`, `prenom`, `date_naissance`, `service`, `adresse`, `tel`, `email`, `password`, `role`, `deleted`, `id_equipe`, `status`)
 VALUES
     ('M001', 'Doe', 'John', '1990-01-01', 'IT', '123 Main St', 1234567890, 'john.doe@example.com', 'password123', 1, 0, 1, 'active'),
     ('M002', 'Smith', 'Jane', '1992-03-15', 'HR', '456 Oak St', 9876543210, 'jane.smith@example.com', 'pass456', 1, 0, 2, 'active'),
@@ -56,4 +56,4 @@ VALUES
 
 #SELECT * FROM users INNER JOIN team on team.idEquipe = users.id_equipe ORDER BY id ASC;
 
-#lien github: https://github.com/zinebMachrouh/brief-05
+# lien github: https://github.com/zinebMachrouh/brief-05
