@@ -1,14 +1,19 @@
 # CREATE database dataware;
 # USE dataware;
+
 # CREATE TABLE users (`id` INT NOT NULL AUTO_INCREMENT , `matricule` VARCHAR(25) NOT NULL , `nom` VARCHAR(25) NOT NULL , `prenom` VARCHAR(25) NOT NULL , `date_naissance` DATE NOT NULL , `service` VARCHAR(50) NOT NULL , `adresse` VARCHAR(150) NOT NULL , `tel` INT(10) NOT NULL , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(25) NOT NULL , `role` INT(1) NOT NULL DEFAULT '0' , `deleted` INT(1) NOT NULL DEFAULT '0' , PRIMARY KEY (`id`));
-# CREATE TABLE team (`id` INT NOT NULL AUTO_INCREMENT , `nom` VARCHAR(25) NOT NULL , `date_creation` DATE NOT NULL , `projet` VARCHAR(50) NOT NULL , `description` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`));
+# CREATE TABLE team (`idEquipe` INT NOT NULL AUTO_INCREMENT , `nomEquipe` VARCHAR(25) NOT NULL , `date_creation` DATE NOT NULL , `projet` VARCHAR(50) NOT NULL , `description` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`));
+
 # ALTER TABLE users ADD id_equipe INTEGER, ADD CONSTRAINT FOREIGN KEY(id_equipe) REFERENCES team(id);
 # ALTER TABLE users ADD status varchar(25);
-# INSERT INTO team VALUES 
+
+# INSERT INTO team 
+VALUES 
     ('WebWizards', '2023-06-04', 'QuantumSphere', 'Transforming concepts into magical digital realities; designers, PM, front-end, back-end, full-stack devs ensure harmony.'), 
     ('TechTitans', '2023-08-02', 'CyberNexa', 'Frontiers of technological innovation; designers, PM, front-end, back-end, full-stack devs ensure technological prowess.'), 
     ('ByteBridges', '2023-08-24', 'DataForge', 'Building robust digital bridges; designers, PM, front-end, back-end, full-stack devs construct a reliable ecosystem.'), 
     ('PixelPioneers', '2023-04-10', 'EchoSync', 'Pushing design and tech boundaries; designers, PM, front-end, back-end, full-stack devs redefine user experiences.'), (NULL, 'CodeCrafters', '2023-07-22', 'CodeHarbor', 'Crafting seamless digital experiences; designers, PM, front-end, back-end, full-stack devs ensure holistic project success.');
+
 # INSERT INTO users (`matricule`, `nom`, `prenom`, `date_naissance`, `service`, `adresse`, `tel`, `email`, `password`, `role`, `deleted`, `id_equipe`, `status`)
 VALUES
     ('M001', 'Doe', 'John', '1990-01-01', 'IT', '123 Main St', 1234567890, 'john.doe@example.com', 'password123', 1, 0, 1, 'active'),
@@ -26,3 +31,5 @@ VALUES
     ('M013', 'Clark', 'Ryan', '1984-06-08', 'Finance', '808 Cedar St', 7778889999, 'ryan.c@example.com', 'ryanpass', 0, 0, 3, 'congé'),
     ('M014', 'Miller', 'Ava', '1997-03-03', 'Marketing', '909 Birch St', 1112223333, 'ava.m@example.com', 'avapass', 0, 0, 4, 'congé'),
     ('M015', 'Lopez', 'Ethan', '1983-12-01', 'Operations', '1010 Main St', 9876543210, 'ethan.l@example.com', 'ethanpass', 0, 0, 5, 'congé');
+
+#SELECT * FROM users INNER JOIN team on team.idEquipe = users.id_equipe ORDER BY id ASC;
